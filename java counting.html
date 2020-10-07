@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body> 
+    
+<script>
+ var a;
+ var b;
+ var suma;
+ var roznica;
+ var iloczyn;
+ var iloraz;
+  function porownaj(a,b){
+    if (a>b) return "A jest wieksze od B";
+      else if (a<b) return "A jest mniejsze od B";
+        else return "liczby sa rowne";
+
+  }
+  
+
+ a=parseInt(prompt("Podaj a "));
+ b=parseFloat(prompt("Podaj b "));
+ suma=a + b;
+ roznica=a - b;
+ iloczyn=a * b;
+ iloraz=a / b;
+ modulo=a % b;
+ document.write(porownaj(a,b));
+ document.write("<br>A= ",a," ");
+ document.write("B= ",b);
+ document.write("<br>suma= ", suma);
+ document.write("<br>roznica= ", roznica);
+ document.write("<br>iloczyn= ",iloczyn);
+ document.write("<br>iloraz= ",iloraz);
+ document.write("<br>modulo= ",modulo);
+
+
+</script> 
+               
+
+
+</body>
+</html>
