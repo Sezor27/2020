@@ -1,0 +1,67 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Produkty</title>
+
+    <script>
+        function myProdukty()
+{
+        var input =document.getElementsByName("produkt");
+        var total=0;
+        var bonus;
+        var radiobonus =  document.getElementsByName("promocja");
+
+        for(var i = 0; i < radiobonus.length; i++)
+        {
+            if(radiobonus[i].checked == true)
+        bonus=parseInt(radiobonus[i].value);
+        }
+        
+        for(var i=0;i<input.length ;i++)
+        {
+        if(input[i].checked)
+        {
+            total += parseFloat(input[i].value);  
+                
+        }
+        }
+        total = total - (total*(bonus/100));
+        document.getElementsByName("suma")[0].value =total.toFixed(3);
+}
+        </script>
+
+</head>
+<body>
+    <h3>1.Wybierz produkty</h3>
+    <form>
+        <input type="checkbox" name="produkt" value="1300" >telewizor - 1300zł <br>
+        <input type="checkbox" name="produkt"  value="150" >spodnie- 150zł <br>
+        <input type="checkbox" name="produkt"  value="100" >koszula - 100zł <br>
+        <input type="checkbox" name="produkt"  value="79" >czapka - 79zł <br>
+        <input type="checkbox" name="produkt"  value="500" >telefon - 500zł <br>
+        <input type="checkbox" name="produkt"  value="350" >zmywarka- 350zł <br><br>
+
+        <label>Suma wynosi:</label><br>
+        <input type="radio" name="promocja" value="5">5%
+        <input type="radio" name="promocja" value="10">10%
+        <input type="radio" name="promocja" value="15">15%
+        <br>
+        <input type="text" name="suma" placeholder="0.00" size="30">
+        <input type="button" onclick="myProdukty()" value="Policz">
+        
+        <p> Dostawa
+            <select id="dostawa">
+                <option value="DHL">DHL</option>
+                <option value="DPD">DPD</option>
+                <option value="paczkomat Inpost">paczkomat Inpost</option>
+            </select>
+        </p>
+
+        <input type="button" onclick="dostawa()" value="Wybór dostawy">
+        <p id="wynik"></p>
+    </form>
+    
+</body>
+</html>
